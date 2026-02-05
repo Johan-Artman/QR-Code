@@ -42,11 +42,11 @@ sheets = ["google-auth >=2.0.0", "google-auth-oauthlib >=0.5.0", "google-api-pyt
 all = ["pypng", "pillow >=9.1.0", "google-auth >=2.0.0", "google-auth-oauthlib >=0.5.0", "google-api-python-client >=2.0.0"]
 
 [project.urls]
-homepage = "https://github.com/lincolnloop/python-qrcode"
-repository = "https://github.com/lincolnloop/python-qrcode.git"
-documentation = "https://github.com/lincolnloop/python-qrcode#readme"
-changelog = "https://github.com/lincolnloop/python-qrcode/blob/main/CHANGES.rst"
-"Bug Tracker" = "https://github.com/lincolnloop/python-qrcode/issues"
+homepage = "https://github.com/Johan-Artman/QR-Code"
+repository = "https://github.com/Johan-Artman/QR-Code.git"
+documentation = "https://github.com/Johan-Artman/QR-Code#readme"
+changelog = "https://github.com/Johan-Artman/QR-Code/blob/master/CHANGES.rst"
+"Bug Tracker" = "https://github.com/Johan-Artman/QR-Code/issues"
 
 [project.scripts]
 qr = "qrcode.console_scripts:main"
@@ -63,9 +63,6 @@ readme = ["README.rst", "CHANGES.rst"]
 # ]
 
 [tool.poetry.group.dev.dependencies]
-pytest = { version = "*" }
-pytest-cov = { version = "*" }
-tox = { version = "*" }
 ruff = { version = "*" }
 pypng = { version = "*" }
 pillow = { version = ">=9.1.0" }
@@ -82,20 +79,6 @@ date-format = " %%-d %%B %%Y"
 prereleaser.middle = [
   "qrcode.release.update_manpage"
 ]
-
-[tool.coverage.run]
-source = ["qrcode"]
-parallel = true
-
-[tool.coverage.report]
-exclude_lines = [
-  "@abc.abstractmethod",
-  "@overload",
-  "if (typing\\.)?TYPE_CHECKING:",
-  "pragma: no cover",
-  "raise NotImplementedError"
-]
-skip_covered = true
 
 [tool.ruff]
 target-version = "py39"
@@ -135,13 +118,4 @@ lint.ignore = [
   # Required for `ruff format` to work correctly
   "COM812", # Checks for the absence of trailing commas
   "ISC001", # Checks for implicitly concatenated strings on a single line
-]
-
-[tool.ruff.lint.extend-per-file-ignores]
-"qrcode/tests/*.py" = [
-  "F401",  # Unused import
-  "PLC0415", # Import not at top of a file
-  "PT011", # pytest.raises is too broad
-  "S101", # Use of 'assert' detected
-  "S603", # `subprocess` call: check for execution of untrusted input
 ]

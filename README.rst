@@ -197,7 +197,7 @@ Styled Image
 
 Works only with versions_ >=7.2 (SVG styled images require 7.4).
 
-.. _versions: https://github.com/lincolnloop/python-qrcode/blob/master/CHANGES.rst#72-19-july-2021
+.. _versions: https://github.com/Johan-Artman/QR-Code/blob/master/CHANGES.rst#72-19-july-2021
 
 To apply styles to the QRCode, use the ``StyledPilImage`` or one of the
 standard SVG_ image factories. These accept an optional ``module_drawer``
